@@ -2,15 +2,15 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
 @Component({
-  selector: 'app-home',
-  templateUrl: './home.component.html',
-  styleUrls: ['./home.component.scss']
+  selector: 'app-navbar',
+  templateUrl: './navbar.component.html',
+  styleUrls: ['./navbar.component.scss']
 })
-export class HomeComponent implements OnInit {
+export class NavbarComponent implements OnInit {
 
   public userDetails: any;
 
-  constructor( private router: Router) { }
+  constructor(private router: Router) { }
 
   ngOnInit(): void {
     const storage = localStorage.getItem('user');
@@ -26,4 +26,5 @@ export class HomeComponent implements OnInit {
     localStorage.removeItem('token');
     this.router.navigateByUrl('/login').then();
   }
+
 }

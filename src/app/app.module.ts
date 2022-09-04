@@ -11,17 +11,29 @@ import {
 } from '@abacritt/angularx-social-login';
 import { LoginComponent } from './login/login.component';
 import { HomeComponent } from './home/home.component';
+import { OAuthModule } from 'angular-oauth2-oidc';
+import { HttpClientModule } from '@angular/common/http';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { AngularFireModule } from '@angular/fire/compat';
+import { environment } from 'src/environments/environment';
+import { NavbarComponent } from './navbar/navbar.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
-    HomeComponent
+    HomeComponent,
+    NavbarComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     SocialLoginModule,
+    HttpClientModule,
+    NgbModule,
+    AngularFireModule.initializeApp(environment.firebase),
+    BrowserAnimationsModule
   ],
   providers: [ {
     provide: 'SocialAuthServiceConfig',
@@ -34,10 +46,10 @@ import { HomeComponent } from './home/home.component';
             '113370816262-qbe0ir3ua279c1mh5m3v36sfongcjr4b.apps.googleusercontent.com'
           )
         },
-        {
-          id: FacebookLoginProvider.PROVIDER_ID,
-          provider: new FacebookLoginProvider('clientId')
-        }
+        // {
+        //   id: FacebookLoginProvider.PROVIDER_ID,
+        //   provider: new FacebookLoginProvider('clientId')
+        // }
       ],
       onError: (err: any) => {
         console.error(err);

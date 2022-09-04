@@ -1,0 +1,17 @@
+<nav class="navbar navbar-light bg-light">
+    <a class="navbar-brand" href="/home">
+      <img src="https://i.pinimg.com/736x/b9/5b/59/b95b59be60a1082b53c55a54f9005654.jpg" width="50" height="50" class="d-inline-block align-top" alt="">
+      Schedio
+    </a> 
+    <div class="row">
+        <div class="col">
+            <div ngbDropdown class="d-inline-block">
+                <button type="button" class="btn btn-outline-primary" id="dropdownBasic1" ngbDropdownToggle><img src="{{userDetails?.photoURL}}" class="rounded-circle" alt="..."></button>
+                <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
+                <button ngbDropdownItem>Profile</button>
+                <button ngbDropdownItem (click)="signOut()">Log out</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</nav> 
