@@ -1,0 +1,56 @@
+<mat-card class="card">
+    <mat-card-header>
+      <div mat-card-avatar class="card-avatar" [ngStyle]="{'background-image' : 'url(' + myPost.profileImage + ')'}"></div>
+      <mat-card-title>{{myPost.profileName}}</mat-card-title>
+      <mat-card-subtitle>{{myPost.profileDescription}}</mat-card-subtitle>
+    </mat-card-header>
+
+    <mat-chip-list class="chip-list">
+        <mat-chip *ngFor="let tag of myPost.tags">
+            <mat-icon>layers</mat-icon>
+            {{tag}}
+        </mat-chip>
+    </mat-chip-list>
+
+    <mat-card-content class="card-content">
+        <mat-expansion-panel hideToggle>
+            <mat-expansion-panel-header>
+                <mat-panel-title>
+                    {{myPost.projectName}}
+                </mat-panel-title>
+                <mat-panel-description>
+                    A project collaboration app
+                </mat-panel-description>
+            </mat-expansion-panel-header>
+            <p>{{myPost.projectDescription}}.</p>
+        </mat-expansion-panel>
+        <img mat-card-image src={{myPost.imageUrl}}>
+    </mat-card-content>
+
+    <mat-card-actions class="card-actions">
+      <button mat-mini-fab [color]="isPostLiked==true ? 'primary' : ''" (click)="onLike()">
+        <mat-icon>favorite</mat-icon>
+      </button>
+      <button mat-mini-fab color="black">
+        <mat-icon>share</mat-icon>
+      </button>
+      <button mat-mini-fab [color]="isPostSaved==true ? 'accent' : ''" (click)="onSave()">
+        <mat-icon>bookmark</mat-icon>
+      </button>
+    </mat-card-actions>
+</mat-card>
+
+
+
+<!-- <mat-chip>
+    <mat-icon matChipAvatar>layers</mat-icon>
+    Database
+</mat-chip>
+<mat-chip>
+    <mat-icon matChipAvatar>security</mat-icon>
+    Security
+</mat-chip>
+<mat-chip>
+    <mat-icon matChipAvatar>cloud</mat-icon>
+    Cloud
+</mat-chip> -->
