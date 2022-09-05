@@ -7,7 +7,7 @@
 
     <mat-chip-list class="chip-list">
         <mat-chip *ngFor="let tag of myPost.tags">
-            <mat-icon>layers</mat-icon>
+            <mat-icon>{{tagsMapper.get(tag) ? tagsMapper.get(tag) : 'layers'}}</mat-icon>
             {{tag}}
         </mat-chip>
     </mat-chip-list>
@@ -19,7 +19,7 @@
                     {{myPost.projectName}}
                 </mat-panel-title>
                 <mat-panel-description>
-                    A project collaboration app
+                    {{myPost.projectGist}}
                 </mat-panel-description>
             </mat-expansion-panel-header>
             <p>{{myPost.projectDescription}}.</p>

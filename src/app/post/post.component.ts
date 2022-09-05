@@ -12,11 +12,17 @@ export class PostComponent implements OnInit {
   isPostLiked: boolean = false;
   isPostSaved: boolean = false;
 
-  tagsData = {
-    Database: "layers",
-    Security: "security",
-    Cloud: "cloud"
-  }
+  // tagsMapper = {
+  //   'Database' : 'layers',
+  //   'Security' : 'security',
+  //   'Cloud' : 'cloud'
+  // };
+
+  tagsMapper = new Map([
+    [ "Database", 'layers' ],
+    [ "Security", 'security' ],
+    [ "Cloud", 'cloud' ]
+  ]);
 
   @Input() myPost: IPost | any;
 

@@ -1,10 +1,10 @@
 export interface IPost {
-    profileName: String,
-    profileImage: String,
-    profileDescription: String,
-    tags: String[],
-    imageUrl: String,
-    projectName: String,
-    projectGist: String,
-    projectDescription: String
+    profileName: string,
+    profileImage: string,
+    profileDescription: string,
+    tags: string[],
+    imageUrl: string,
+    projectName: string,
+    projectGist: string,
+    projectDescription: string
 }

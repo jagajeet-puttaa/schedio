@@ -28,3 +28,18 @@ export class NavbarComponent implements OnInit {
   }
 
 }
+
+// {"uid":"qMKXSD8Nr1fQ3SvtZMtkXNJj0ud2",
+// "email":"jagajeetputtaa.2002@gmail.com",
+// "emailVerified":true,
+// "displayName":"Jagajeet Puttaa",
+// "isAnonymous":false,
+// "photoURL":"https://lh3.googleusercontent.com/a-/AFdZuco4hihWGQbzwuTSEwf53cOZI5Uclz3PTWtV9cQa4A=s96-c",
+// "providerData":
+// [{"providerId":"google.com",
+// "uid":"111010472196991534646",
+// "displayName":"Jagajeet Puttaa",
+// "email":"jagajeetputtaa.2002@gmail.com",
+// "phoneNumber":null,
+// "photoURL":"https://lh3.googleusercontent.com/a-/AFdZuco4hihWGQbzwuTSEwf53cOZI5Uclz3PTWtV9cQa4A=s96-c"}],
+// "stsTokenManager":

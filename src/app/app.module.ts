@@ -24,6 +24,7 @@ import { MatInputModule } from '@angular/material/input';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { GoogleLoginProvider, SocialAuthServiceConfig, SocialLoginModule } from '@abacritt/angularx-social-login';
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -53,7 +54,8 @@ import { GoogleLoginProvider, SocialAuthServiceConfig, SocialLoginModule } from 
     MatExpansionModule,
     MatInputModule,
     MatSnackBarModule,
-    MatFormFieldModule
+    MatFormFieldModule,
+    ReactiveFormsModule
   ],
   providers: [ {
     provide: 'SocialAuthServiceConfig',
