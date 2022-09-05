@@ -3,10 +3,11 @@
       <img src="https://i.pinimg.com/736x/b9/5b/59/b95b59be60a1082b53c55a54f9005654.jpg" width="50" height="50" class="d-inline-block align-top" alt="">
       Schedio
     </a> 
-    <div class="row">
-        <div class="col">
-            <div ngbDropdown class="d-inline-block">
-                <button type="button" class="btn btn-outline-primary" id="dropdownBasic1" ngbDropdownToggle><img src="{{userDetails?.photoURL}}" class="rounded-circle" alt="..."></button>
+    <div >
+        <div >
+            <!-- That display: dynamic and placement: bottom-right is used to make the dropdown menu on left. Side effects? -->
+            <div ngbDropdown class="d-inline-block" placement="bottom-right" display="dynamic">
+                <button type="button" class="btn btn-outline-primary" id="dropdownBasic1" ngbDropdownToggle><img src="{{userDetails?.photoURL}}" class="rounded-circle" width="40" height="40" alt="..."></button>
                 <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
                 <button ngbDropdownItem>Profile</button>
                 <button ngbDropdownItem (click)="signOut()">Log out</button>

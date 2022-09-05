@@ -7,14 +7,14 @@ import { AuthService } from '../auth.service';
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.scss']
 })
-export class LoginComponent implements OnInit {
+export class LoginComponent{
 
   user: SocialUser | undefined;
 
   constructor( private router: Router,private auth:AuthService) { }
 
-  ngOnInit(): void {
-  }
+//   ngOnInit(): void {
+//   }
 
   signInWithGoogle(): any{
     this.auth.googleSignIn();
