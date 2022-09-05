@@ -1,13 +1,8 @@
-<!-- <div class="row"> -->
-    <!-- <div class="col md-6">
-        <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-login-form/draw2.webp" class="img-fluid" alt="Sample image">
-    </div>
-    <div class="col md-3">
-        <button mat-button (click)="signInWithGoogle()">
-            Continue with Google
-        </button>
-    </div>  -->
-<!-- </div>  -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script src="https://cdn.rawgit.com/oauth-io/oauth-js/c5af4519/dist/oauth.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-social/4.12.0/bootstrap-social.min.css">
 
 <div class="login">
     <img src="../../assets/collaborate.svg" alt="">
@@ -15,7 +10,11 @@
 
 <div class="login">
 
-    <button type="button" class="login-with-google-btn" (click)="signInWithGoogle()">
-        Continue with Google
-    </button>
+    <a id="google-button" class="btn btn-block btn-social btn-google" (click)="signInWithGoogle()">
+        <i class="fa fa-google"></i> Continue with Google
+    </a>
+
+    <a id="github-button" class="btn btn-block btn-social btn-github" (click)="signInWithGithub()">
+        <i class="fa fa-github"></i> Continue with Github
+    </a>
 </div>

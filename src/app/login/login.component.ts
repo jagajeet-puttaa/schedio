@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { FacebookLoginProvider, GoogleLoginProvider, SocialAuthService, SocialUser } from '@abacritt/angularx-social-login';
+import * as firebase from 'firebase/compat';
 import { AuthService } from '../auth.service';
 @Component({
   selector: 'app-login',
@@ -8,8 +8,6 @@ import { AuthService } from '../auth.service';
   styleUrls: ['./login.component.scss']
 })
 export class LoginComponent{
-
-  user: SocialUser | undefined;
 
   constructor( private router: Router,private auth:AuthService) { }
 
@@ -20,4 +18,8 @@ export class LoginComponent{
     this.auth.googleSignIn();
   }
 
+  signInWithGithub(): any{
+    this.auth.githubSignIn();
+    
+  }
 }

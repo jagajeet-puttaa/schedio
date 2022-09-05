@@ -57,27 +57,7 @@ import { ReactiveFormsModule } from '@angular/forms';
     MatFormFieldModule,
     ReactiveFormsModule
   ],
-  providers: [ {
-    provide: 'SocialAuthServiceConfig',
-    useValue: {
-      autoLogin: false,
-      providers: [
-        {
-          id: GoogleLoginProvider.PROVIDER_ID,
-          provider: new GoogleLoginProvider(
-            '113370816262-qbe0ir3ua279c1mh5m3v36sfongcjr4b.apps.googleusercontent.com'
-          )
-        },
-        // {
-        //   id: FacebookLoginProvider.PROVIDER_ID,
-        //   provider: new FacebookLoginProvider('clientId')
-        // }
-      ],
-      onError: (err: any) => {
-        console.error(err);
-      }
-    } as SocialAuthServiceConfig,
-  }],
+  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
