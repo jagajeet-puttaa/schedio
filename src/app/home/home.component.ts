@@ -10,6 +10,8 @@ import { Itag } from '../interfaces/itag';
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit {
+  
+  toppingList: string[] = ['ReactJS', 'AngularJS', 'Django', 'Postgresql', 'ElectronJS', 'Android','Machine Learning','Cybersecurity'];
 
   posts: IPost[] = [
     {
@@ -77,6 +79,7 @@ export class HomeComponent implements OnInit {
   public userDetails: any;
   createPostForm !: FormGroup;
   panelOpenState: boolean = false;
+  toFile: any;
 
 
   constructor( private router: Router) { }
@@ -93,9 +96,10 @@ export class HomeComponent implements OnInit {
     this.createPostForm = new FormGroup({
       projectName : new FormControl("",[Validators.required,Validators.maxLength(25)]),
       projectGist : new FormControl("",Validators.required),
-      projectDescription : new FormControl("",Validators.required)
+      projectDescription : new FormControl("",Validators.required),
+      projectTechstack: new FormControl("",Validators.required),
+      multiplefile: new FormControl("",Validators.required)   
     })
-
   }
 
   signOut(): void {
@@ -106,19 +110,18 @@ export class HomeComponent implements OnInit {
   onCreatePostFormSubmit(): void{
     console.log(this.createPostForm.value)
 
-    this.posts.push({
-        profileName: this.userDetails.displayName,
-        profileImage: this.userDetails.photoURL,
-        profileDescription: 'CS Sophomore | Competitive Programmer',
-        tags: ['Database','Security','Cloud'],
-        imageUrl: 'https://cdn.dribbble.com/users/5296758/screenshots/16817313/media/c0adf729f1864f23a8b980d8eb2001dc.jpg?compress=1&resize=400x300',
-        projectName: this.createPostForm.value.projectName,
-        projectGist: this.createPostForm.value.projectGist,
-        projectDescription: this.createPostForm.value.projectDescription
-    })
+    // this.posts.push({
+    //     profileName: this.userDetails.displayName,
+    //     profileImage: this.userDetails.photoURL,
+    //     profileDescription: 'CS Sophomore | Competitive Programmer',
+    //     tags: this.createPostForm.value.projectTechstack,
+    //     imageUrl: 'https://cdn.dribbble.com/users/5296758/screenshots/16817313/media/c0adf729f1864f23a8b980d8eb2001dc.jpg?compress=1&resize=400x300',
+    //     projectName: this.createPostForm.value.projectName,
+    //     projectGist: this.createPostForm.value.projectGist,
+    //     projectDescription: this.createPostForm.value.projectDescription
+    // })
 
     this.createPostForm.reset();
     this.panelOpenState = !this.panelOpenState;
   }
-
 }

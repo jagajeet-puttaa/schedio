@@ -42,7 +42,20 @@
               <textarea matInput formControlName="projectDescription"></textarea>
             </mat-form-field>
 
-            <button mat-raised-button color="primary" type="submit">Submit</button>
+            <mat-form-field appearance="fill">
+              <mat-label>Tech stack</mat-label>
+              <mat-select formControlName="projectTechstack" multiple>
+                <mat-option *ngFor="let topping of toppingList" [value]="topping">{{topping}}</mat-option>
+              </mat-select>
+            </mat-form-field>
+
+            <mat-form-field>
+              <!-- <input type="file" formControlName="multiplefile" placeholder="Upload sample images"> -->
+              <ngx-mat-file-input formControlName="multiplefile" placeholder="Upload sample images" multiple></ngx-mat-file-input>
+              <mat-icon matSuffix>folder</mat-icon>
+            </mat-form-field>
+            <br>
+            <button mat-raised-button color="primary" type="submit" id="upload_image">Submit</button>
 
           </form>
 

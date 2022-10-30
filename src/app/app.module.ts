@@ -25,6 +25,8 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { GoogleLoginProvider, SocialAuthServiceConfig, SocialLoginModule } from '@abacritt/angularx-social-login';
 import { ReactiveFormsModule } from '@angular/forms';
+import {MatSelectModule} from '@angular/material/select';
+import { MaterialFileInputModule } from 'ngx-material-file-input';
 
 
 @NgModule({
@@ -55,7 +57,9 @@ import { ReactiveFormsModule } from '@angular/forms';
     MatInputModule,
     MatSnackBarModule,
     MatFormFieldModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    MatSelectModule,
+    MaterialFileInputModule
   ],
   providers: [],
   bootstrap: [AppComponent]
