@@ -27,6 +27,8 @@ import { GoogleLoginProvider, SocialAuthServiceConfig, SocialLoginModule } from 
 import { ReactiveFormsModule } from '@angular/forms';
 import {MatSelectModule} from '@angular/material/select';
 import { MaterialFileInputModule } from 'ngx-material-file-input';
+import { ProfileComponent } from './profile/profile.component';
+import {MatGridListModule} from '@angular/material/grid-list';
 
 
 @NgModule({
@@ -35,7 +37,8 @@ import { MaterialFileInputModule } from 'ngx-material-file-input';
     LoginComponent,
     HomeComponent,
     NavbarComponent,
-    PostComponent
+    PostComponent,
+    ProfileComponent
   ],
   imports: [
     BrowserModule,
@@ -59,7 +62,8 @@ import { MaterialFileInputModule } from 'ngx-material-file-input';
     MatFormFieldModule,
     ReactiveFormsModule,
     MatSelectModule,
-    MaterialFileInputModule
+    MaterialFileInputModule,
+    MatGridListModule
   ],
   providers: [],
   bootstrap: [AppComponent]

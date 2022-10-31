@@ -2,7 +2,7 @@
     <a class="navbar-brand" href="/home">
       <!-- <img src="https://i.pinimg.com/736x/b9/5b/59/b95b59be60a1082b53c55a54f9005654.jpg" width="50" height="50" class="d-inline-block align-top" alt=""> -->
       Schedio
-    </a> 
+    </a>
     <div >
         <div >
             <!-- That display: dynamic and placement: bottom-right is used to make the dropdown menu on left. Side effects? -->
@@ -10,7 +10,7 @@
                 <button type="button" class="btn btn-outline-primary" id="dropdown1" ngbDropdownToggle><img src="{{userDetails?.photoURL}}" class="rounded-circle" width="40" height="40" alt="..."></button>
                 <div ngbDropdownMenu aria-labelledby="dropdown1">
                     <a href="#" ngbDropdownItem [class.disabled]="true" aria-disabled="true">Hi, {{userDetails?.displayName}}</a>
-                    <a ngbDropdownItem>Profile</a>
+                    <a ngbDropdownItem href="/profile">Profile</a>
                     <a (click)="signOut()" ngbDropdownItem>Logout</a>    
                 </div>
             </div>
