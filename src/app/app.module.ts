@@ -31,6 +31,7 @@ import { ProfileComponent } from './profile/profile.component';
 import {MatGridListModule} from '@angular/material/grid-list';
 import {MatDialogModule} from '@angular/material/dialog';
 import { PostdetailComponent } from './postdetail/postdetail.component';
+import { FooterComponent } from './footer/footer.component';
 
 
 @NgModule({
@@ -41,7 +42,8 @@ import { PostdetailComponent } from './postdetail/postdetail.component';
     NavbarComponent,
     PostComponent,
     ProfileComponent,
-    PostdetailComponent
+    PostdetailComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,

@@ -1,3 +1,76 @@
 <app-navbar></app-navbar>
 
-<app-post></app-post>
+<div class="container">
+    <mat-card class="card">
+        <mat-card-header>
+          <div mat-card-avatar class="card-avatar" [ngStyle]="{'background-image' : 'url(' + tempPost.profileImage + ')'}"></div>
+          <mat-card-title>{{tempPost.profileName}}</mat-card-title>
+          <mat-card-subtitle>{{tempPost.profileDescription}}</mat-card-subtitle>
+        </mat-card-header>
+    </mat-card>
+
+    <mat-card class="card">
+        <mat-card-content class="project-title">
+            <h2>{{tempPost.projectName}}</h2>
+        </mat-card-content>
+    </mat-card>
+
+    <mat-card class="card">
+        <mat-card-content class="card-content post-detail-card">
+
+            <div>
+                <h2>Related Topics : </h2>
+                <mat-chip-list class="chip-list">
+                    <mat-chip *ngFor="let tag of tempPost.tags">
+                        <mat-icon>{{tagsMapper.get(tag) ? tagsMapper.get(tag) : 'layers'}}</mat-icon>
+                        {{tag}}
+                    </mat-chip>
+                </mat-chip-list>
+    
+                <h2>Project Gist : </h2>
+                <p>{{tempPost.projectGist}}</p>
+                <h2>Project Description : </h2>
+                <p>{{tempPost.projectDescription}}.</p>
+            </div>
+
+            <div class="img-container">
+                <img mat-card-image src={{tempPost.imageUrl}}>
+            </div>
+
+        </mat-card-content>
+
+        <mat-card-actions class="button-list">
+            <button mat-raised-button color="primary">Collaborate</button>
+            <button mat-mini-fab [color]="isPostLiked==true ? 'primary' : ''" (click)="onLike()">
+                <mat-icon>favorite</mat-icon>
+              </button>
+              <button mat-mini-fab color="black">
+                <mat-icon>share</mat-icon>
+              </button>
+              <button mat-mini-fab [color]="isPostSaved==true ? 'accent' : ''" (click)="onSave()">
+                <mat-icon>bookmark</mat-icon>
+            </button>
+        </mat-card-actions>
+
+    </mat-card>
+
+    <!-- <mat-card class="card"> -->
+        <!-- <mat-card-header>
+          <mat-card-title>Screenshots</mat-card-title>
+          <mat-card-subtitle>{{tempPost.profileDescription}}</mat-card-subtitle>
+        </mat-card-header> -->
+
+        <!-- <mat-card-actions class="button-list">
+            <button mat-raised-button color="primary">Collaborate</button>
+            <button mat-mini-fab [color]="isPostLiked==true ? 'primary' : ''" (click)="onLike()">
+                <mat-icon>favorite</mat-icon>
+              </button>
+              <button mat-mini-fab color="black">
+                <mat-icon>share</mat-icon>
+              </button>
+              <button mat-mini-fab [color]="isPostSaved==true ? 'accent' : ''" (click)="onSave()">
+                <mat-icon>bookmark</mat-icon>
+            </button>
+        </mat-card-actions> -->
+    <!-- </mat-card> -->
+</div>
