@@ -29,6 +29,8 @@ import {MatSelectModule} from '@angular/material/select';
 import { MaterialFileInputModule } from 'ngx-material-file-input';
 import { ProfileComponent } from './profile/profile.component';
 import {MatGridListModule} from '@angular/material/grid-list';
+import {MatDialogModule} from '@angular/material/dialog';
+import { PostdetailComponent } from './postdetail/postdetail.component';
 
 
 @NgModule({
@@ -38,7 +40,8 @@ import {MatGridListModule} from '@angular/material/grid-list';
     HomeComponent,
     NavbarComponent,
     PostComponent,
-    ProfileComponent
+    ProfileComponent,
+    PostdetailComponent
   ],
   imports: [
     BrowserModule,
@@ -63,7 +66,8 @@ import {MatGridListModule} from '@angular/material/grid-list';
     ReactiveFormsModule,
     MatSelectModule,
     MaterialFileInputModule,
-    MatGridListModule
+    MatGridListModule,
+    MatDialogModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -8,11 +8,14 @@
     <mat-card-header>
       <div mat-card-avatar class="example-header-image"></div>
       <mat-card-title>{{userDetails?.displayName}}</mat-card-title>
-      <!-- <mat-card-subtitle>Dog Breed</mat-card-subtitle> -->
+      <mat-card-subtitle>Student</mat-card-subtitle>
     </mat-card-header>
     <mat-card-content>
-      <img class="profileimg rounded-circle" mat-card-image src="{{userDetails?.photoURL}}">
-      <h3>Profile Description</h3>
+      <div class="profile-detail-container"> 
+        <img class="profileimg rounded-circle" mat-card-image src="{{userDetails?.photoURL}}">
+        <p>{{posts.length}} posts</p>
+      </div>
+      <h3>Profile Description<mat-icon class="edit-icon">edit</mat-icon></h3>
       <p>
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea incidunt ipsam dolorum illo, 
         vel quasi numquam expedita laudantium adipisci nihil alias non praesentium quia voluptate porro voluptates vitae explicabo quidem!
@@ -20,38 +23,57 @@
     </mat-card-content>
 </mat-card>
 
-<mat-card class="profile-card">
+<mat-card class="profile-myposts">
     <mat-card-header>
-      <mat-card-title>Saved Posts</mat-card-title>
+      <mat-card-title>My Posts</mat-card-title>
     </mat-card-header>
 </mat-card>
 
-<!-- <div class="profile-grid">
+<div class="profile-grid">
     <mat-card *ngFor="let post of posts" class="profile-post">
-        <mat-card-header>
+        <mat-card-header class="profile-post-header">
             <mat-card-title>{{post.projectName}}</mat-card-title>
         </mat-card-header>
+        <!-- <img class="profile-post-image" mat-card-image src="{{post.imageUrl}}"> -->
         <mat-card-content>
-            <img class="postimg" mat-card-image src="{{post.imageUrl}}">  
-            <p>{{post.projectDescription}}</p>
-        </mat-card-content>
+            <div>
+                <p>{{post.projectDescription}}</p>
+            </div>
+        </mat-card-content> 
     </mat-card>
-</div> -->
-
-<div class="profile-grid">
-    <mat-grid-list cols="3" rowHeight="2:1">
-        <mat-grid-tile *ngFor="let post of posts" class="profile-post">
-    <div>
-        <div>
-            <h2>{{post.projectName}}</h2>
-            <img class="postimg" mat-card-image src="{{post.imageUrl}}">  
-        </div>
-        <div>
-            <p>{{post.projectDescription}}</p>
-        </div>
-    </div>
-        </mat-grid-tile>
-    </mat-grid-list>
 </div>
 
 
+
+
+
+<!-- <div class="profile-grid">
+    <mat-grid-list cols="3" rowHeight="1:1" gutterSize="1em">
+        <mat-grid-tile *ngFor="let post of posts" class="profile-post">
+            <mat-card>
+                <mat-card-header>
+                    <mat-card-title>{{post.projectName}}</mat-card-title>
+                </mat-card-header>
+                <div class="postimg-container">
+                    <img class="postimg" mat-card-image src="{{post.imageUrl}}">
+                </div>
+                <mat-card-content>
+                    <div>
+                        <p>{{post.projectDescription}}</p>
+                    </div>
+                </mat-card-content> 
+            </mat-card>
+        </mat-grid-tile>
+    </mat-grid-list>
+</div> -->
+
+
+<!-- <div>
+    <div>
+        <h2>{{post.projectName}}</h2>
+        <img class="postimg" mat-card-image src="{{post.imageUrl}}">  
+    </div>
+    <div>
+        <p>{{post.projectDescription}}</p>
+    </div>
+</div> -->

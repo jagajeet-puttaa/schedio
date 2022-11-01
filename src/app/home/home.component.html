@@ -82,7 +82,7 @@
 
   <div class="post-card-container">
     <div *ngFor="let post of posts" class="post-card">
-      <app-post [myPost]="post" ></app-post> 
+      <app-post [myPost]="post" [routerLink]="['/postdetail']" [queryParams]="{id: post.postid}"></app-post> 
     </div>
   </div> 
 

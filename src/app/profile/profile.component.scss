@@ -2,8 +2,25 @@
     padding: 2em;
     margin: 2em;
     display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.profile-myposts{
+    padding: 2em;
+    margin: 2em;
+    display: flex;
     justify-content: center;
     align-items: center;
+}
+
+.profile-grid{
+    padding: 2em;
+    margin: 2em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
 }
 
 .profileimg{
@@ -11,20 +28,25 @@
     height: 200px;
 }
 
-.profile-grid{
-    margin: 5em;
-}
-
-.profile-grid .mat-grid-tile{
-    border: 2px solid black;
-}
-
 .profile-post{
-    padding: 1em;
+    padding: 2em;
     margin: 1em;
+    max-width: 400px;
 }
 
-.postimg{
-    width: 100px;
-    height: 100px;
+.profile-post:hover{
+    box-shadow: -1px 3px 20px 0px rgba(0, 0, 0, 0.8);
 }
+
+.edit-icon{
+    margin-left: 1em;
+}
+
+.profile-detail-container{
+    display: flex;
+    justify-content: space-between;
+}
+
+
+
+
