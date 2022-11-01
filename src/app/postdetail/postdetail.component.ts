@@ -43,7 +43,7 @@ export class PostdetailComponent implements OnInit {
     })
     this.http.get(url+"viewPostById/?id="+this.currentId).subscribe((post: any)=>{
       this.currentPost = post[0];
-      console.log(this.currentPost);
+      // console.log(this.currentPost);
     });
   }
 
