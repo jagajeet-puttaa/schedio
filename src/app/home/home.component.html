@@ -49,11 +49,13 @@
               </mat-select>
             </mat-form-field>
 
-            <mat-form-field>
-              <!-- <input type="file" formControlName="multiplefile" placeholder="Upload sample images"> -->
-              <ngx-mat-file-input formControlName="multiplefile" placeholder="Upload sample images" multiple></ngx-mat-file-input>
+            <input type="file" formControlName="multiplefile" placeholder="Upload sample images" (change)="onChangePhoto($event)">
+            <!-- <button mat-raised-button color="primary">Confirm</button> -->
+            <br>
+            <!-- <mat-form-field> 
+              <ngx-mat-file-input formControlName="multiplefile" placeholder="Upload images (MAX 4)" (ngModelChange)="onChangePhoto($event)"></ngx-mat-file-input>
               <mat-icon matSuffix>folder</mat-icon>
-            </mat-form-field>
+            </mat-form-field> -->
             <br>
             <button mat-raised-button color="primary" type="submit" id="upload_image">Submit</button>
 
