@@ -1,6 +1,8 @@
+import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { IPost } from '../interfaces/i-post';
+import { url } from '../interfaces/constants';
 
 @Component({
   selector: 'app-profile',
@@ -84,7 +86,7 @@ export class ProfileComponent implements OnInit {
 
   public userDetails: any;
 
-  constructor(private router: Router) { }
+  constructor(private router: Router, private http:HttpClient) { }
 
   ngOnInit(): void {
     const storage = localStorage.getItem('user');
@@ -94,9 +96,15 @@ export class ProfileComponent implements OnInit {
       this.signOut();
     }
 
-    this.posts = this.posts.filter((item: IPost) => {
-      return item.profileName == this.userDetails.displayName;
-    })
+    // this.posts = this.posts.filter((item: IPost) => {
+    //   return item.profileName == this.userDetails.displayName;
+    // })
+
+    this.http.get(url+"viewPost/?profileName="+this.userDetails.displayName).subscribe((post: any)=>{
+      this.posts = post;
+      console.log(this.posts);
+      // console.log(post)
+    });
   }
 
   signOut(): void {

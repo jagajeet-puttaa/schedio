@@ -5,6 +5,7 @@ import { Form, FormControl, FormGroup, Validators } from '@angular/forms';
 import { UploadService } from '../upload.service';
 import { HttpClient } from '@angular/common/http';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { DJANGO_SERVER, url } from '../interfaces/constants';
 
 
 @Component({
@@ -14,11 +15,9 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 })
 export class HomeComponent implements OnInit {
   
-  DJANGO_SERVER ='http://192.168.162.120:8000'  //FIND DJANGO SERVER HERE!
   toppingList: string[] = ['ReactJS', 'AngularJS', 'Django', 'Postgresql', 'ElectronJS', 'Android','Machine Learning','Cybersecurity'];
   response: string = " ";
   imageURL1: any;
-  url = "http://192.168.162.95:8000/"
   posts:any
 
   // posts: IPost[] = [
@@ -116,7 +115,7 @@ export class HomeComponent implements OnInit {
       fileSource: new FormControl('', [Validators.required])
     })
 
-    this.http.get(this.url+"viewPost/").subscribe((post: any)=>{
+    this.http.get(url+"viewAll/").subscribe((post: any)=>{
       this.posts = post;
       // console.log(this.posts);
       // console.log(post)
@@ -160,7 +159,7 @@ export class HomeComponent implements OnInit {
     this.uploadService.upload(formData).subscribe(
       (res) => {
         this.response = res;
-        this.imageURL1 = `${this.DJANGO_SERVER}${ res.file}`;
+        this.imageURL1 = `${DJANGO_SERVER}${ res.file}`;
         // console.log(this.response);
         // console.log(this.imageURL1);
         this.onSubmitPhoto()
@@ -187,7 +186,7 @@ export class HomeComponent implements OnInit {
     //   projectDescription: this.createPostForm.value.projectDescription
     // })
 
-    this.http.post(this.url+"addPost/",{
+    this.http.post(url+"addPost/",{
           profileName: this.userDetails.displayName,
           profileImage: this.userDetails.photoURL,
           profileDescription: 'Description',
